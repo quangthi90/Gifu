@@ -1,14 +1,15 @@
 #header {
 	background: transparent url(../../img/top/image01.jpg) no-repeat 0 -175px;
-	height: 700px;
+	height: 680px;
 }
 
 #top-text {
 	position: absolute;
 	bottom: 50px;
 	left: 50px;
-	max-width: 550px;
-	font-weight: bold;	
+	max-width: 555px;
+	font-weight: bold;
+	font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",serif;
 }
 #top-text p {
 	margin: 0px;
