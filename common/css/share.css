@@ -171,7 +171,8 @@ p {
 	margin-bottom: 15px;
 	padding-bottom: 10px;
 }
-#content .half-content .content {	
+#content .half-content .content {
+	font-weight: bold;
 }
 #content .half-content .content ul {	
 }
