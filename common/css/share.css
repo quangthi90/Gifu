@@ -87,7 +87,7 @@ p {
 	overflow: hidden;
 }
 #top-menu ul li {	
-	margin-bottom: 16px;
+	margin-bottom: 14px;
 	margin-right: -6px;
 	/* IE 8 */
 	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
