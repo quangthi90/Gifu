@@ -85,51 +85,68 @@ p {
 	top: 50px;
 }
 #top-menu ul {
+	overflow: hidden;
 }
-#top-menu ul li {
-	width: 200px;
-	border-radius: 15px 0px 0px 15px;
-	background: #FFFFFF;
-	margin-bottom: 20px;
-	padding: 0px 10px;
-	height: 20px;
-	line-height: 20px;
-
+#top-menu ul li {	
+	margin-bottom: 16px;
+	margin-right: -6px;
 	/* IE 8 */
-	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 
 	  /* IE 5-7 */
-	  filter: alpha(opacity=50);
+	  filter: alpha(opacity=90);
 
 	  /* Netscape */
-	  -moz-opacity: 0.5;
+	  -moz-opacity: 0.9;
 
 	  /* Safari 1.x */
-	  -khtml-opacity: 0.5;
+	  -khtml-opacity: 0.9;
 
 	  /* Good browsers */
-	  opacity: 0.5;
-}
-#top-menu ul li.active,
-#top-menu ul li:hover {
-	/* IE 8 */
-	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-
-	  /* IE 5-7 */
-	  filter: alpha(opacity=80);
-
-	  /* Netscape */
-	  -moz-opacity: 0.8;
-
-	  /* Safari 1.x */
-	  -khtml-opacity: 0.8;
-
-	  /* Good browsers */
-	  opacity: 0.8;
+	  opacity: 0.9;
 }
 #top-menu ul li a {
-	color: #000;
 	display: block;
+	width: 235px;
+	height: 30px;
+	text-indent: -100000px;
+	background-repeat: no-repeat;
+}
+
+#top-menu ul li.m1 a {
+	background: transparent url(../img/menu1.png);
+}
+#top-menu ul li.m1:hover a,
+#top-menu ul li.m1.active  a{
+	background: transparent url(../img/menu1-hover.png);
+}
+#top-menu ul li.m2  a{
+	background: transparent url(../img/menu2.png);
+}
+#top-menu ul li.m2:hover a,
+#top-menu ul li.m2.active  a{
+	background: transparent url(../img/menu2-hover.png);
+}
+#top-menu ul li.m3  a{
+	background: transparent url(../img/menu3.png);
+}
+#top-menu ul li.m3:hover a,
+#top-menu ul li.m3.active a {
+	background: transparent url(../img/menu3-hover.png);
+}
+#top-menu ul li.m4 a {
+	background: transparent url(../img/menu4.png);
+}
+#top-menu ul li.m4:hover a,
+#top-menu ul li.m4.active a {
+	background: transparent url(../img/menu4-hover.png);
+}
+#top-menu ul li.m5 a {
+	background: transparent url(../img/menu5.png);
+}
+#top-menu ul li.m5:hover a,
+#top-menu ul li.m5.active a {
+	background: transparent url(../img/menu5-hover.png);
 }
 
 /*------------------------------------------
@@ -157,7 +174,8 @@ p {
 	margin-bottom: 20px;
 	padding-bottom: 5px;
 }
-#content .half-content .content {	
+#content .half-content .content {
+	font-weight: bold;
 }
 #content .half-content .content ul {	
 }

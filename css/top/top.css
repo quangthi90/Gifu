@@ -7,8 +7,10 @@
 	position: absolute;
 	bottom: 50px;
 	left: 50px;
-	max-width: 580px;
+	max-width: 600px;
+	font-size: 13px;
 	font-weight: bold;
+	font-family: "ƒqƒ‰ƒMƒm–¾’© Pro W3","Hiragino Mincho Pro","‚l‚r ‚o–¾’©","MS PMincho",serif;
 }
 #top-text p {
 	margin: 0px;
