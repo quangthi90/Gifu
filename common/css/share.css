@@ -73,6 +73,9 @@ p {
 	left: 50px;
 	top: 50px;
 }
+#brand #logo{
+	width: 130px;
+}
 #top-menu {
 	position: absolute;
 	right: 0px;
