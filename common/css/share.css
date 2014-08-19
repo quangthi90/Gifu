@@ -41,6 +41,9 @@ p {
 .fr {
 	float: right;
 }
+.email-right{
+	margin-left: 20px;
+}
 .shadow {
 	-webkit-box-shadow: 0 10px 10px -6px #0e0e0e;
 	   -moz-box-shadow: 0 10px 10px -6px #0e0e0e;
@@ -162,13 +165,13 @@ p {
 }
 #content .half-content .block {
 	padding-bottom: 15px;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 	background: transparent url(../img/dot.png) repeat-x 0 100%; 
 }
 #content .half-content .header {
 	background: transparent url(../img/dot.png) repeat-x 0 100%; 
-	margin-bottom: 15px;
-	padding-bottom: 10px;
+	margin-bottom: 20px;
+	padding-bottom: 5px;
 }
 #content .half-content .content {
 	font-weight: bold;
