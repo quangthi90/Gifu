@@ -1,0 +1,170 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	padding: 0;
+	background:#FFFFFF;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ3", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+/*------------------------------------------
+	Common
+--------------------------------------------*/
+a {
+	color: #B66823;
+	text-decoration: none;
+}
+h1 {
+
+}
+h2 {
+	
+}
+h3 {
+	font-size: 14px;
+}
+h4 {	
+}
+
+p {
+	margin: 5px 0px;
+}
+
+.clear-both {
+	clear: both;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.shadow {
+	-webkit-box-shadow: 0 10px 10px -6px #0e0e0e;
+	   -moz-box-shadow: 0 10px 10px -6px #0e0e0e;
+	        box-shadow: 0 10px 10px -6px #0e0e0e;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=90, Color='#0e0e0e')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=90, Color='#0e0e0e');
+}
+
+/*------------------------------------------
+	wrapper
+--------------------------------------------*/
+#wrapper {
+	width: 980px;
+	margin: 0 auto;
+}
+
+/*------------------------------------------
+	Header
+--------------------------------------------*/
+#top {
+	width: 100%;
+	margin-top:0px;
+}
+#header {
+	position: relative;
+}
+#brand {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}
+#top-menu {
+	position: absolute;
+	right: 0px;
+	top: 50px;
+}
+#top-menu ul {
+}
+#top-menu ul li {
+	width: 200px;
+	border-radius: 15px 0px 0px 15px;
+	background: #FFFFFF;
+	margin-bottom: 20px;
+	padding: 0px 10px;
+	height: 20px;
+	line-height: 20px;
+
+	/* IE 8 */
+	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+	  /* IE 5-7 */
+	  filter: alpha(opacity=50);
+
+	  /* Netscape */
+	  -moz-opacity: 0.5;
+
+	  /* Safari 1.x */
+	  -khtml-opacity: 0.5;
+
+	  /* Good browsers */
+	  opacity: 0.5;
+}
+#top-menu ul li.active,
+#top-menu ul li:hover {
+	/* IE 8 */
+	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+	  /* IE 5-7 */
+	  filter: alpha(opacity=80);
+
+	  /* Netscape */
+	  -moz-opacity: 0.8;
+
+	  /* Safari 1.x */
+	  -khtml-opacity: 0.8;
+
+	  /* Good browsers */
+	  opacity: 0.8;
+}
+#top-menu ul li a {
+	color: #000;
+	display: block;
+}
+
+/*------------------------------------------
+	Content
+--------------------------------------------*/
+#content {
+	padding: 50px 100px;
+}
+#content .half-content {
+	width: 360px;
+}
+#content .half-content.fl {
+	padding-right: 30px;
+}
+#content .half-content.fr {
+	padding-left: 30px;
+}
+#content .half-content .block {
+	padding-bottom: 15px;
+	margin-bottom: 25px;
+	background: transparent url(../img/dot.png) repeat-x 0 100%; 
+}
+#content .half-content .header {
+	background: transparent url(../img/dot.png) repeat-x 0 100%; 
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+}
+#content .half-content .content {	
+}
+#content .half-content .content ul {	
+}
+#content .half-content .content ul li {
+	margin-bottom: 5px;	
+}
+
+/*------------------------------------------
+	Footer
+--------------------------------------------*/
+#footer {
+	padding: 50px;
+}
+#footer .copyright {
+	font-size: 11px;
+}
