@@ -73,7 +73,7 @@ p {
 #brand {
 	position: absolute;
 	left: 50px;
-	top: 50px;
+	top: 47px;
 }
 #brand #logo{
 	width: 130px;
@@ -81,7 +81,7 @@ p {
 #top-menu {
 	position: absolute;
 	right: 0px;
-	top: 50px;
+	top: 48px;
 }
 #top-menu ul {
 	overflow: hidden;
@@ -106,7 +106,7 @@ p {
 }
 #top-menu ul li a {
 	display: block;
-	width: 235px;
+	width: 227px;
 	height: 30px;
 	text-indent: -100000px;
 	background-repeat: no-repeat;
@@ -152,7 +152,7 @@ p {
 	Content
 --------------------------------------------*/
 #content {
-	padding: 50px 100px;
+	padding: 43px 100px;
 }
 #content .half-content {
 	width: 360px;
@@ -170,11 +170,11 @@ p {
 }
 #content .half-content .header {
 	background: transparent url(../img/dot.png) repeat-x 0 100%; 
-	margin-bottom: 20px;
+	margin-bottom: 17px;
 	padding-bottom: 5px;
 }
 #content .half-content .content {
-	font-weight: normal;
+	font-weight: bold;
 }
 #content .half-content .content ul {	
 }
