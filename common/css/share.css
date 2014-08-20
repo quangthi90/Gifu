@@ -214,6 +214,7 @@ p {
 }
 .block .header  img {
 	vertical-align: middle;
+	margin-top: -3px;
 }
 .block .header  img.op {
 	margin-right: 1px;
