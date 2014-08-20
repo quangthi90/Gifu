@@ -195,6 +195,29 @@ p {
 	margin-bottom: 5px;	
 }
 
+#content .full-content {
+}
+#content .full-content .block-info {
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	background: transparent url(../img/dot.png) repeat-x 0 100%; 
+}
+#content .full-content .block-info .header {
+	background: transparent url(../img/dot.png) repeat-x 0 100%; 
+	margin-bottom: 18px;
+	padding-bottom: 10px;
+}
+#content  .full-content .block-info .content {
+	font-weight: normal;
+}
+#content  .full-content .block-info .content ul {	
+}
+#content  .full-content .block-info .content ul li {
+	margin-bottom: 5px;	
+	padding-left: 10px;
+	background: transparent url(../img/dot-black.png) no-repeat 0 50%;
+}
+
 /*
   Block content
 */
