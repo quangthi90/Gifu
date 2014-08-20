@@ -9,3 +9,33 @@
 	left: 100px;
 	max-width: 625px;
 }
+#content {
+	padding-top: 47px;
+}
+#content .block {
+	margin-bottom: 30px;
+}
+#content .block:last-child {
+	margin-bottom: 0;
+}
+#content .block .header {
+	line-height: 12px;
+}
+#content .block .content p {
+	line-height: 18px;
+}
+#content .block .underline {
+	margin-top: 8px;
+	width: 100%;
+	height: 11px;
+}
+#content .block .content ul {
+	margin-top: 16px;
+}
+#content .block .content li {
+	line-height: 21px;
+	list-style: disc;
+}
+#footer {
+	padding-top: 5px;
+}
