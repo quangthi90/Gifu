@@ -87,7 +87,7 @@ p {
 	overflow: hidden;
 }
 #top-menu ul li {	
-	margin-bottom: 14px;
+	margin-bottom: 10px;
 	margin-right: -6px;
 	/* IE 8 */
 	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
@@ -174,7 +174,7 @@ p {
 	padding-bottom: 5px;
 }
 #content .half-content .content {
-	font-weight: bold;
+	font-weight: normal;
 }
 #content .half-content .content ul {	
 }
