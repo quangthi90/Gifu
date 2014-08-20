@@ -16,6 +16,7 @@ body {
 a {
 	color: #B66823;
 	text-decoration: none;
+	outline: none;
 }
 h1 {
 
