@@ -52,6 +52,14 @@ p {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=90, Color='#0e0e0e')";
 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=90, Color='#0e0e0e');
 }
+.dot-line {
+	background: transparent url(../../common/img/dot-hon.png) repeat-x 0 0; 
+	height: 3px;
+}
+.dot-line-vertical {
+	background: transparent url(../../common/img/dot-ver.png) repeat-y 0 0; 
+	width: 3px;
+}
 
 /*------------------------------------------
 	wrapper
@@ -153,7 +161,8 @@ p {
 	Content
 --------------------------------------------*/
 #content {
-	padding: 43px 100px;
+	padding: 43px 100px 0px 100px;
+	overflow: hidden;
 }
 #content .underline {
 	background: transparent url(../img/dot.png) repeat-x 0 100%; 
@@ -184,6 +193,89 @@ p {
 }
 #content .half-content .content ul li {
 	margin-bottom: 5px;	
+}
+
+/*
+  Block content
+*/
+.block {
+	margin-bottom: 25px;
+}
+.block:last-child {
+	margin-bottom: 0px;
+}
+.block .header {	
+	margin-bottom: 3px;
+}
+.block .header  h2.title {
+	font-size: 14px;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+.block .header  img {
+	vertical-align: middle;
+}
+.block .header  img.op {
+	margin-right: 1px;
+}
+.block .header  img.cl {
+	margin-left: 1px;
+}
+.block .content {
+	font-size: 13px;
+}
+.block .content ul {
+}
+.block .content ul  li{
+	padding-left: 8px;
+	background: transparent url(../img/dot-black.png) no-repeat 0 50%;
+}
+.block  .container {
+	position: relative;
+}
+.block  .container .dot-line-ver-left {
+	position: absolute;
+	top: 3px;
+	bottom: 3px;
+	left: 0px;
+	width: 3px;
+	background: transparent url(../img/dot-ver.png) repeat-y 0 0;
+}
+.block  .container .dot-line-ver-right {
+	position: absolute;
+	top: 3px;
+	bottom: 3px;
+	right: -1px;
+	width: 3px;
+	background: transparent url(../img/dot-ver.png) repeat-y 0 100%;
+}
+.block  .container .section {
+	padding: 20px 20px 8px 20px
+}
+.container .section  h3.section-title {
+	font-size: 13px;
+	line-height: 13px;
+}
+.container .section .section-desc {
+	font-size: 12px;
+	margin: 0px;
+	margin-bottom: 7px;
+}
+.container .section .image-row {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.container .section .image-row  .img-item {
+	margin-right: 20px;
+}
+.container .section .image-row  .img-item:last-child {
+	margin-right: 0px;
+}
+.container .section .image-row  .img-item img {
+	margin-bottom: 2px;
+}
+.container .section .image-row  .img-item .img-desc{
+	display: block;
 }
 
 /*------------------------------------------
