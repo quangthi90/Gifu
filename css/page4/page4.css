@@ -1,0 +1,11 @@
+#header {
+	background: transparent url(../../img/page4/heading.jpg) no-repeat 0 -42px;
+	height: 300px;
+}
+
+#top-text {
+	position: absolute;
+	bottom: 25px;
+	left: 100px;
+	max-width: 625px;
+}
