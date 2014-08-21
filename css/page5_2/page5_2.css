@@ -1,0 +1,101 @@
+﻿.dot-line-ver-center {
+	position: absolute;
+	top: 3px;
+	bottom: 3px;
+	right: -3px;
+	width: 3px;
+	background: transparent url(../../common/img/dot-ver.png) repeat-y 0 100%;
+}
+
+#header {
+	background: transparent url(../../img/page5_2/heading.jpg) no-repeat -80px -90px;
+	height: 300px;
+}
+
+#brand #logo {
+	width: 119px;
+}
+
+#top-text {
+	position: absolute;
+	bottom: 25px;
+	left: 100px;
+	max-width: 625px;
+}
+#content {
+	padding-top: 48px;
+	padding-left: 98px;
+}
+
+#content .block-1 {
+	margin-bottom: 31px;
+	font-family: "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+#content .block:last-child {
+	margin-bottom: 0;
+}
+
+#content .block .header {
+	line-height: 16px;
+	letter-spacing: 1.8px;
+	margin-bottom: 8px;
+}
+
+#content .block-3 .header{
+	margin-bottom: 5px;
+}
+
+#content .block .content p {
+	line-height: 18px;
+	margin: 6px 0px;
+}
+
+#content .block .underline {
+	margin-top: 8px;
+	width: 100%;
+	height: 11px;
+}
+
+#content .block .content ul {
+	margin-top: 16px;
+}
+#content .block .content li {
+	line-height: 21px;
+	list-style: disc;
+}
+
+#content .container .haft-section {
+	float: left;
+	width: 360px;
+	padding-top: 20px;
+	padding-left: 21px;
+	padding-right: 19px;
+	padding-bottom: 17px;
+	text-align: center;
+	position: relative;
+}
+
+#content .container .haft-section .section-title {
+	position: absolute;
+	left: 21px;
+	bottom: 16px;
+	width: 50px;
+	text-align: left;
+	line-height: 14px;
+	margin: 0px;
+}
+
+#footer {
+	padding-top: 36px;
+	padding-right: 52px;
+}
+
+#footer .copyright{
+	font-size: 8px;
+}
+
+#footer .fr{
+	font-size: 12px;
+	margin-top: -1px;
+}
