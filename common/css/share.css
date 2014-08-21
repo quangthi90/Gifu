@@ -312,8 +312,8 @@ p {
 	Footer
 --------------------------------------------*/
 #footer {
-	padding: 50px;
+	padding: 40px 50px;
 }
 #footer .copyright {
-	font-size: 11px;
+	font-size: 9px;
 }

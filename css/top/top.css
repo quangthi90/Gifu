@@ -18,3 +18,7 @@ h2.header {
 	font-size:14px !important;
 	font-weight:normal !important;
 }
+
+#footer {
+	padding-top: 15px;
+}
