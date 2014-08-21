@@ -273,9 +273,9 @@ p {
 }
 .block  .container .dot-line-ver-right {
 	position: absolute;
-	top: 3px;
+	top: 0px;
 	bottom: 3px;
-	right: 1px;
+	right: -1px;
 	width: 3px;
 	background: transparent url(../img/dot-ver.png) repeat-y 0 100%;
 }
