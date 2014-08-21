@@ -34,7 +34,7 @@
 }
 #content .block .content li {
 	line-height: 21px;
-	list-style: disc;
+	/*list-style: disc;*/
 }
 #footer {
 	padding-top: 5px;

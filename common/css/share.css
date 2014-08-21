@@ -60,6 +60,12 @@ p {
 	background: transparent url(../../common/img/dot-ver.png) repeat-y 0 0; 
 	width: 3px;
 }
+.e-block {
+	display: block;
+}
+.margin-b20 {
+	margin-bottom: 20px !important;
+}
 
 /*------------------------------------------
 	wrapper
@@ -269,7 +275,7 @@ p {
 	position: absolute;
 	top: 3px;
 	bottom: 3px;
-	right: -1px;
+	right: 1px;
 	width: 3px;
 	background: transparent url(../img/dot-ver.png) repeat-y 0 100%;
 }
