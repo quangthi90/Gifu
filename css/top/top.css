@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* CSS Document */
 #header {
 	background: transparent url(../../img/top/image011.jpg) no-repeat 0 -177px;
 	height: 660px;
@@ -9,13 +11,15 @@
 	left: 50px;
 	max-width: 750px;
 	font-size: 13px;
+	font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",serif;
 }
 #top-text p {
 	margin: 0px;
 }
 
 h2.header {
-	font-size:14px !important;
+	font-size:13px !important;
+	font-weight:bold !important;
 }
 
 #footer {
