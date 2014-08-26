@@ -30,7 +30,7 @@ h4 {
 }
 
 p {
-	margin: 5px 0;
+	margin: 3px 0;
 }
 
 .clear-both {
@@ -169,6 +169,8 @@ p {
 #content {
 	padding: 43px 100px 0px 100px;
 	overflow: hidden;
+	border-left: 1px solid #5F5F5F;
+	border-right: 1px solid #5F5F5F;
 }
 #content .underline {
 	background: transparent url(../img/dot.png) repeat-x 0 100%; 
