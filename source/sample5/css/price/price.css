@@ -21,3 +21,9 @@
 	border-radius: 6px;
 	behavior: url(PIE.htc);
 }
+/* add */
+.text {
+    line-height: 140%;
+    padding-left: 25px;
+    vertical-align: top;
+}
