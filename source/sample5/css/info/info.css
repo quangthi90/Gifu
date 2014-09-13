@@ -1,0 +1,28 @@
+#table01{
+width: 620px;
+height:auto;
+display: block;
+margin-top:0px;
+margin-left: 0px;
+border-collapse: collapse;
+}
+
+#table01 td { 
+border-collapse: collapse;
+}
+
+
+.bg1{
+	width:160px;
+	padding: 7px 0px 7px 20px;
+	line-height: 210%;
+	color:#069;
+	border-bottom:1px solid #999;
+}
+
+.bg2{
+	width: 460px;
+	padding: 7px 7px 7px 0px;
+	line-height: 210%;
+	border-bottom:1px solid #999;
+}
