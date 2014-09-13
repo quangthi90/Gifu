@@ -1,0 +1,23 @@
+/**********************************[global-navi]***/
+
+/***[information]***/
+.info {
+	padding: -10px 20px 20px 20px;
+	width: 650px;
+	height: auto;
+	word-wrap:break-word;
+}
+.info p {
+	padding-bottom:20px;
+	line-height: 140%;
+	width: 650px;
+	height: auto;
+	text-shadow:1px 1px 2px rgba(255,255,255,1);	
+}
+
+
+.info .date{
+	color:#069;
+	line-height: 130%;
+	padding-right:10px;
+}
