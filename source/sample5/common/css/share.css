@@ -3,7 +3,7 @@ body {
 	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	font-size:14px;
 	color: #333;
-	background-color:#FFF;
+	background-color:#F0F0F0;
 }
 * {
 	margin:0;
@@ -14,19 +14,15 @@ a, a:visited {
 	color: #069;
 }
 small{
-	color:#000;
-	font-weight:bold;
+	color:#666;
+	font-size:17px;
 }
 a:hover {
 	color: #F90;
-	
-}
-.tel-info a:hover {
-	color: #f77b09;
-	
+	text-decoration:underline;
 }
 a img:hover {
-	opacity:0.6;
+	opacity:0.8;
 }
 img {
 	border:none;
@@ -39,7 +35,7 @@ span.red{
 }
 /**********************************[共通装飾]***/
 .circle {
-	background-color:#F77B09;/*電話アイコン、見出しアイコン背景色*/
+	background-color:#ffcc00;/*電話アイコン、見出しアイコン背景色*/
 	color:#fff;/*見出しアイコン色*/
 	text-align:center;
 	padding:6px;
@@ -79,13 +75,13 @@ br.clear, p.clear {
 .r10 {
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
-	border-radius: 4px;
+	border-radius: 10px;
 	behavior: url(PIE.htc);
 }
 .r20 {
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
-	border-radius: 4px;
+	border-radius: 20px;
 	behavior: url(PIE.htc);
 }
 .right {
@@ -112,13 +108,13 @@ br.clear, p.clear {
 #header-color {
 	width:100%;
 	height:6px;
-	background-color:#00bfff ;/*ページ最上部のアクセント色*/
+	background-color:#4169e1;/*ページ最上部のアクセント色*/
 }
 .header {
-	height:150px;
+	min-height:150px;
 	width:100%;
 	background-color:#fff;/*ヘッダー背景色*/
-	border-bottom:#0C7CB1 1px solid;
+	/*box-shadow:0px -2px 5px rgba(73,137,253,0.3) inset;*/
 }
 .header .site-title {
 	float:left;
@@ -133,20 +129,22 @@ br.clear, p.clear {
 	color:#09c;/*サイトキャッチコピーの文字色*/
 	font-size:0.9em;
 	padding:0 20px;
+	padding-top: 20px;
 }
 .header .tel-info {
 	float:right;
 	min-width:300px;
-	padding-top:10px;
+	padding-top:0px;
+	padding-bottom:10px;
 }
 .header .tel-info .phone a, .header .tel-info .phone a:visited {
- color:#0C7CB1;
+ color:#666;
 }
 .header .tel-info .open {
-	background-color:#4382A5;
+	background-color:#4169e1;
 	color:#FFF;
-	text-align:left;
-	padding:6px 0px 6px 30px;
+	text-align:center;
+	padding:6px 0px;
 }
 .header .tel-info .phone {
 	font-size:2.3em;
@@ -166,9 +164,14 @@ br.clear, p.clear {
 	width:100%;
 	height:auto;
 	box-sizing:border-box;
-	border-bottom:#0C7CB1 1px solid;
-	background: #00bfff; /* Old browsers */
-	
+	/*box-shadow:0px 2px 5px rgba(73,137,253,1);*/
+	background: #0000ff; /* Old browsers */
+	background: -moz-linear-gradient(left, #23629c 0%, #4169e1 50%, #23629c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #23629c), color-stop(50%, #4169e1), color-stop(100%, #23629c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #23629c 0%, #4169e1 50%, #23629c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #23629c 0%, #4169e1 50%, #23629c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #23629c 0%, #4169e1 50%, #23629c 100%); /* IE10+ */
+	background: linear-gradient(to right, #23629c 0%, #4169e1 50%, #23629c 100%); /* W3C */
 }
 .main-image {
 	width:660px;
@@ -182,7 +185,7 @@ br.clear, p.clear {
 	color:#fff;
 	text-align:center;
 	padding:20px;
-	font-size:1.6em;
+	font-size:1.8em;
 	position: absolute;
 	bottom:30px;
 	width:100%;
@@ -233,24 +236,26 @@ ul.global li a, ul.global li a:visited {
 	background-image:url(../img/tri.png);
 	background-position: 10px 50%;
 	background-repeat:no-repeat;
-	background-color: #0C7CB1;
-	color:#fff;
+	background-color: #FFF;
+	color:#685857;
 	font-size:1.4em;
 	padding:15px 10px 12px 35px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
-	border:2px solid #00bfff;
 	behavior: url(PIE.htc);
 }
 ul.global li a:hover {
-	background-color: #fff;
-	color:#f77b09;
+	background-color: #ffcc00;
+	color:#685857;
 	text-decoration:none;
 }
-.active{
-	color:#f77b09 !important;
-	background-color: #fff !important;
+ul.global li a:hover small {
+	color:#685857;
+}
+.active, .active small{
+	color:#685857 !important;
+	background-color: #ffcc00 !important;
 }
 /**********************************[main]***/
 .main {
@@ -270,7 +275,7 @@ ul.global li a:hover {
 	color:#F33;
 }
 .main .content-title {
-	background-color:#0C7CB1;
+	background-color:#4169e1;
 	color:#fff;
 	font-size:1.4em;
 	padding:5px 10px;
@@ -290,9 +295,11 @@ ul.global li a:hover {
 	font-weight:normal;
 	color:#006699;
 	background-color:#fff;
-	border-bottom: double #0C7CB1;
+	border-bottom:medium double #FFCC00;
 	text-shadow:1px 1px 2px rgba(255,255,255,1);
-	
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
 	behavior: url(PIE.htc);
 }
 .main h4{
@@ -336,34 +343,10 @@ ul.global li a:hover {
 	margin:30px 0 20px;
 	float:right;
 }
-/***[contact-banner]***/
-.side .conact-banner {
-	box-sizing:border-box;
-	border:1px solid #F77B09;
-	background:url(../img/phone-contact_bg.png) right center no-repeat #fff;
-	padding:10px 15px;
-	margin-bottom:10px;
-}
-.side .conact-banner .head {
-	font-size:1.5em;
-	font-weight:normal;
-	color:#069;
-}
- .conact-banner  span{
-	 
-	width:100%;
-	height:auto;
-	
-}
-.side .conact-banner small {
-	font-size:0.8em;
-	font-weight:normal;
-	color:#666;
-}
 /***[phone-banner]***/
 .side .phone-banner {
 	box-sizing:border-box;
-	border:1px solid #F77B09;
+	border:1px solid #FC0;
 	background-color:#fff;
 	text-align:center;
 	font-weight:normal;
@@ -371,15 +354,15 @@ ul.global li a:hover {
 	margin-bottom:10px;
 }
 .side .phone-banner .head {
-	background-color:#F5AC69;
+	background-color:#FFCC00;
 	font-weight:normal;
-	color:#FFF;
+	color:#666;
 	font-size:1.2em;
 	padding:3px 0;
 	margin:0 -15px;
-	-webkit-border-radius: 3px 3px 0 0;
-	-moz-border-radius: 3px 3px 0 0;
-	border-radius: 3px 3px 0 0;
+	-webkit-border-radius: 20px 20px 0 0;
+	-moz-border-radius: 20px 20px 0 0;
+	border-radius: 20px 20px 0 0;
 	behavior: url(PIE.htc);
 }
 .side .phone-banner img {
@@ -398,11 +381,45 @@ ul.global li a:hover {
 	font-weight:normal;
 	color: #09c;
 }
+/***[contact-banner]***/
+.side .conact-banner {
+	box-sizing:border-box;
+	width:300px;
+	height:80px;
+	margin-bottom:20px;
+	border: 1px solid #FC0;
+}
+.side .img1 {
+	background:url(../img/img1.png) #fff center no-repeat;
+}
+.side .img2 {
+	background:url(../img/img2.png) center no-repeat;
+}
+.side .conact-banner .head {
+	font-size:1.3em;
+	font-weight:normal;
+	color:#4169e1;
+	padding-top:10px;
+	padding-left:10px;
+}
+.head a{
+	color:#4989fd;
+}
+.head a:hover{
+	text-decoration:none;
+	color:#e04050;
+}
+.side .conact-banner small {
+	font-size:0.8em;
+	font-weight:normal;
+	color:#666;
+	margin-left:12px;
+}
 /**********************************[footer]***/
 #footer {
 	width:100%;
 	height:auto;
-	background-color:#00bfff;/*フッター背景色*/
+	background-color:#999999;/*フッター背景色*/
 	text-align:center;
 	color:#FFF;
 }
@@ -416,27 +433,28 @@ ul.global li a:hover {
 	color:#FFF;
 }
 #footer a:hover{
-	color:#f77b09;
+	color:#e6211b;
 	text-decoration:none;
 }
 #footer .copyright {
 	padding:10px 0;
+	padding-top:12px;
 	font-size:0.9em;
 	color:rgba(255,255,255,0.7);
-	background-color:#0C7CB1;
+	background-color:#4169e1;
 	box-shadow:0px 5px 5px rgba(0,0,0,0.2) inset;
 }
 #footer .copyright a {
 	color:#FFF;
 }
 #footer .copyright a:hover {
-	color:#f77b09;
+	color:#e6211b;
 	text-decoration:none;
 }
 /**********************************[to pagetop]***/
 #pageTop {
 	background:#fff;
-	color:#4989fd;
+	color:#4169e1;
 	padding:5px 10px 0;
 	position:fixed;
 	bottom:0;
@@ -449,7 +467,7 @@ ul.global li a:hover {
 }
 #pageTop:hover {
 	background:#fff;
-	color: #F77b09;
+	color: #e6211b;
 	opacity:1;
 }
 #pageTop small {
