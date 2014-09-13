@@ -3,7 +3,7 @@ body {
 	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	font-size:14px;
 	color: #333;
-	background-color:#FFF;
+	background-color:#F0F0F0;
 }
 * {
 	margin:0;
@@ -292,7 +292,7 @@ ul.global li a:hover {
 	background-color:#fff;
 	border-bottom: double #0C7CB1;
 	text-shadow:1px 1px 2px rgba(255,255,255,1);
-	
+	border-radius: 5px;
 	behavior: url(PIE.htc);
 }
 .main h4{
