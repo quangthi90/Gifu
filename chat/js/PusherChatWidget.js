@@ -59,6 +59,8 @@ function PusherChatWidget(pusher, options) {
        self._sendChatButtonClicked();
     }
   })
+
+   //this._widget.find('.activity-stream').emoticonize();
   
   var messageEl = this._messagesEl;
   messageEl.scroll(function() {
@@ -152,6 +154,7 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
       var name = $('<div class="pusher-chat-widget-current-user-name">' + activity.actor.displayName.replace(/\\'/g, "'") + '</div>');
       var header = self._widget.find('.pusher-chat-widget-header');
       header.html(image).append(name);
+      //this._widget.find('.activity-stream').emoticonize();
     }
   })
 };
@@ -176,9 +179,9 @@ PusherChatWidget._createHTML = function(appendTo) {
   '<div class="pusher-chat-widget">' +
     '<div class="pusher-chat-widget-header">' +
       '<label for="nickname">Name</label>' +
-      '<input type="text" name="nickname" />' +
+      '<input type="text" name="nickname" value="Nga" />' +
       '<label for="email" title="So we can look up your Gravatar">Email (optional)</label>' +
-      '<input type="email" name="email" />' +
+      '<input type="email" name="email" value="nguyennga1310@yahoo.com" />' +
     '</div>' +
     '<div class="pusher-chat-widget-messages">' +
       '<ul class="activity-stream">' +

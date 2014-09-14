@@ -9,13 +9,16 @@
     
     <link href="styles.css" rel="stylesheet" />
     <link href="pusher-chat-widget.css" rel="stylesheet" />
-    
+    <link href="jquery.cssemoticons.css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
-    <script src="js/PusherChatWidget.js"></script>    
+    <script src="js/PusherChatWidget.js"></script>
+    <script src="js/jquery.cssemoticons.js"></script>  
+    <script src="js/jquery-1.4.2.min.js"></script> 
+    <script src="js/jquery.cssemoticons.min.js"></script> 
     <script>
       $(function() {     
         var pusher = new Pusher("22dc8822a1badda84d02")
@@ -24,6 +27,11 @@
         });
       });
     </script>
+    <script >
+        // $(document).ready(function(){
+        // $('.activity-stream').emoticonize();
+    });
+  </script>
   </head>
   <body>
     <div class="container">
@@ -33,8 +41,8 @@
         </div>        
         <div class="row">
           <div class="span5" id="pusher_chat_widget">
-          </div>          
-        </div>        
+          </div>        
+        </div>         
       </section>
       <footer>
       </footer>
