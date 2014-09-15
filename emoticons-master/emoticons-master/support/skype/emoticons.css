@@ -5,7 +5,7 @@
     text-indent: -10000px;
     overflow: hidden;
     cursor: text;
-    background: url('demo/angel.gif') no-repeat;
+    /*background: url('demo/angel.gif') no-repeat;*/
     text-align: left;
 }
 .emoticon-smile { background: url('smile.gif') no-repeat; }
@@ -31,7 +31,7 @@
 .emoticon-doh { background: url('doh.gif') no-repeat; }
 .emoticon-angry { background: url('angry.gif') no-repeat; }
 .emoticon-speechless-1 { background: url('speechless-1.gif') no-repeat; }
-.emoticon-it-wasnt-me { background: url('it-wasnt.gif') no-repeat; }
+.emoticon-it-wasnt { background: url('it-wasnt.gif') no-repeat; }
 .emoticon-kiss-1 { background: url('kiss-1.gif') no-repeat; }
 .emoticon-party { background: url('party.gif') no-repeat; }
 .emoticon-tongue-out-1 { background: url('tongue-out.gif') no-repeat; }

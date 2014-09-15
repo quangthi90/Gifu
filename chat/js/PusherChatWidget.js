@@ -60,7 +60,7 @@ function PusherChatWidget(pusher, options) {
     }
   })
 
-   //this._widget.find('.activity-stream').emoticonize();
+   //this._widget.find('.text').emoticonize();
   
   var messageEl = this._messagesEl;
   messageEl.scroll(function() {
