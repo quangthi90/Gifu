@@ -15,21 +15,19 @@
 </head>
 
 <body>
-<div style="width: 600px; height:200px"> <img src="images/1.jpg" id="demo3"/> </div>
+<div style="width: 600px; height:200px; overflow: hidden;"> <img src="images/1.jpg" id="demo3"/> </div>
 <button id="btsave">save</button>
 <button id="btdrag">drag</button>
 <div id="position_img"></div>
-
-<script type="text/javascript">
-	$('#demo3').dragncrop({position: { offset: [0.75,0]}});	
-</script>
 <script type="text/javascript">
 	$('#btsave').click(function(){
 		$('#demo3').draggable( "disable" );
 		a = $('#demo3').dragncrop('getPosition');
 		$('#position_img').text ("Position offset: "+ a.offset);
 	})
+
 	$('#btdrag').click(function(){
+		$('#demo3').dragncrop();
 		$('#demo3').draggable( "enable" );
 	})
 </script>
