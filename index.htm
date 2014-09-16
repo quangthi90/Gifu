@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Drag'n'crop Plugin Examples</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link href="jquery.drag-n-crop.css" rel="stylesheet" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="imagesloaded.js"></script>
+<script src="scale.fix.js"></script>
+<script src="jquery.drag-n-crop.js"></script>
+
+</head>
+
+<body>
+<div style="width: 600px; height:200px"> <img src="images/1.jpg" id="demo3"/> </div>
+<button id="btsave">save</button>
+<button id="btdrag">drag</button>
+<div id="position_img">Position </div>
+
+<script type="text/javascript">
+	$('#demo3').dragncrop({position: { offset: [0.75,0]}});	
+</script>
+<script type="text/javascript">
+	$('#btsave').click(function(){
+		$('#demo3').draggable( "disable" );
+		a = $('#demo3').dragncrop('getPosition');
+		$('#position_img').text ("Position:"+ a);
+	})
+	$('#btdrag').click(function(){
+		$('#demo3').draggable( "enable" );
+	})
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+1. Khi nhấp chuột vào file ảnh để di chuyển thì <boby> thành <bpdy style="cursor: auto">
+
+2. Khi ảnh có thể di chuyển mới có sự thay đổi đó, ngược lại thì không.
+
+3. Khi không có file imagesloaded.js || jquery.drag-n-crop.js thì không thể thay đổi vị trí ảnh.
