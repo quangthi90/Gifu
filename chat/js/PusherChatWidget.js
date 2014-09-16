@@ -91,7 +91,6 @@ PusherChatWidget.prototype._chatMessageReceived = function(data) {
       self._messagesEl.scrollTop(messageEl.scrollHeight);
     }
   });
-  
   ++this._itemCount;
   
   if(this._itemCount > this.settings.maxItems) {
@@ -229,9 +228,8 @@ PusherChatWidget._buildListItem = function(activity) {
   var message = $('<div class="activity-row">' +
                     '<div class="text">' + activity.body.replace(/\\('|&quot;)/g, '$1') + '</div>' +
                   '</div>');
-  $('.text').emoticonize();
   content.append(message);
-  //this._widget.find('.text').emoticonize();
+  $('.text').emoticonize();
   var time = $('<div class="activity-row">' + 
                 '<a ' + (activity.link?'href="' + activity.link + '" ':'') + ' class="timestamp">' +
                   '<span title="' + activity.published + '" data-activity-published="' + activity.published + '">' + PusherChatWidget.timeToDescription(activity.published) + '</span>' +
