@@ -4,11 +4,31 @@
     height: 24px;
     text-indent: -10000px;
     overflow: hidden;
-    cursor: text;
+    cursor: inherit;
     /*background: url('demo/angel.gif') no-repeat;*/
-    text-align: left;
+    text-align: center;
 }
-.emoticon-smile { background: url('smile.gif') no-repeat; }
+.emoticon:hover{
+	border-width: 2px;
+	border-color: #fff;
+	border-style: solid;
+	text-align: center;
+	border-radius: 4px;
+}
+#overview{
+	background-color: #000;
+}
+.emoticonshow{
+	width: 25px;
+	height: 25px;
+	background: url('smile.gif') no-repeat;
+	text-align: center;
+	padding: 2px;
+}
+.emoticonshow:hover{
+	background-color: #000;
+}
+.emoticon-smile { background: url('smile.gif') no-repeat;}
 .emoticon-sad-smile { background: url('sad-smile.gif') no-repeat; }
 .emoticon-big-smile { background: url('big-smile.gif') no-repeat; }
 .emoticon-cool { background: url('cool.gif') no-repeat; }
