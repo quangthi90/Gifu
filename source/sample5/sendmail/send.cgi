@@ -13,7 +13,7 @@ $this_server = $ENV{'SERVER_NAME'};
 
 $sendmail = '/usr/sbin/sendmail';
 
-@mailto = ('fygnp13@yahoo.co.jp');
+@mailto = ('aaaaaa@gmail.com');
 
 $thanks_url = 'thanks.html';
 
