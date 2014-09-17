@@ -226,10 +226,16 @@ PusherChatWidget._buildListItem = function(activity) {
   content.append(user);
   
   var message = $('<div class="activity-row">' +
-                    '<div class="text">' + activity.body.replace(/\\('|&quot;)/g, '$1') + '</div>' +
-                  '</div>');
+                    '<div class="text">' + activity.body.replace(/\\('|&quot;)/g, '$1')+ '</div>' +
+                  '</div>'); 
+  var Oldmessage = message.val();
+  var text = Oldmessage.find('.text');
+  var content = text.text();
+  content = content.emoticonize();
+  message.find('.text').text() = content;
+  //console.log(sContent);
   content.append(message);
-  $('.text').emoticonize();
+  //$('.text').emoticonize();
   var time = $('<div class="activity-row">' + 
                 '<a ' + (activity.link?'href="' + activity.link + '" ':'') + ' class="timestamp">' +
                   '<span title="' + activity.published + '" data-activity-published="' + activity.published + '">' + PusherChatWidget.timeToDescription(activity.published) + '</span>' +
