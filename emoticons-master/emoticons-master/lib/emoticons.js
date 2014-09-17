@@ -1,35 +1,35 @@
 (function($, exports, window, name) {
 
 if (!exports) {
-    exports = {};
+	exports = {};
 
-    if ($) {
-        $[name] = exports;
-    } else {
-        window[name] = exports;
-    }
+	if ($) {
+		$[name] = exports;
+	} else {
+		window[name] = exports;
+	}
 }
 
 var emoticons,
-    codesMap = {},
-    primaryCodesMap = {},
-    regexp,
-    metachars = /[[\]{}()*+?.\\|^$\-,&#\s]/g,
-    entityMap;
+	codesMap = {},
+	primaryCodesMap = {},
+	regexp,
+	metachars = /[[\]{}()*+?.\\|^$\-,&#\s]/g,
+	entityMap;
 
 entityMap = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;',
-    '/': '&#x2F;'
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	'"': '&quot;',
+	"'": '&#39;',
+	'/': '&#x2F;'
 };
 
 function escape(string) {
-    return String(string).replace(/[&<>"'\/]/g, function(s) {
-        return entityMap[s];
-    });
+	return String(string).replace(/[&<>"'\/]/g, function(s) {
+		return entityMap[s];
+	});
 }
 
 /**
@@ -38,30 +38,30 @@ function escape(string) {
  * @param {Object} data
  */
 exports.define = function(data) {
-    var name, i, codes, code,
-        patterns = [];
+	var name, i, codes, code,
+		patterns = [];
 
-    for (name in data) {
-        codes = data[name].codes;
-        for (i in codes) {
-            code = codes[i];
-            codesMap[code] = name;
+	for (name in data) {
+		codes = data[name].codes;
+		for (i in codes) {
+			code = codes[i];
+			codesMap[code] = name;
 
-            // Create escaped variants, because mostly you want to parse escaped
-            // user text.
-            codesMap[escape(code)] = name;
-            if (i == 0) {
-                primaryCodesMap[code] = name;
-            }
-        }
-    }
+			// Create escaped variants, because mostly you want to parse escaped
+			// user text.
+			codesMap[escape(code)] = name;
+			if (i == 0) {
+				primaryCodesMap[code] = name;
+			}
+		}
+	}
 
-    for (code in codesMap) {
-        patterns.push('(' + code.replace(metachars, "\\$&") + ')');
-    }
+	for (code in codesMap) {
+		patterns.push('(' + code.replace(metachars, "\\$&") + ')');
+	}
 
-    regexp = new RegExp(patterns.join('|'), 'g');
-    emoticons = data;
+	regexp = new RegExp(patterns.join('|'), 'g');
+	emoticons = data;
 };
 
 /**
@@ -71,11 +71,16 @@ exports.define = function(data) {
  * @param {Function} [fn] optional template builder function.
  */
 exports.replace = function(text, fn) {
-    return text.replace(regexp, function(code) {
-        var name = codesMap[code];
-        return (fn || exports.tpl)(name, code, emoticons[name].title);
-    });
+	return text.replace(regexp, function(code) {
+		var name = codesMap[code];
+		return (fn || exports.tpl)(name, code, emoticons[name].title);
+	});
 };
+// exports.replaceCode = function(sName) {
+// 	console.log(sName);
+// 	console.log(primaryCodesMap);
+// 	return primaryCodesMap[sName];
+// };
 
 /**
  * Get primary emoticons as html string in order to display them later as overview.
@@ -84,16 +89,16 @@ exports.replace = function(text, fn) {
  * @return {String}
  */
 exports.toString = function(fn) {
-    var code,
-        str = '',
-        name;
+	var code,
+		str = '',
+		name;
 
-    for (code in primaryCodesMap) {
-        name = primaryCodesMap[code];
-        str += (fn || exports.tpl)(name, code, emoticons[name].title);
-    }
+	for (code in primaryCodesMap) {
+		name = primaryCodesMap[code];
+		str += (fn || exports.tpl)(name, code, emoticons[name].title);
+	}
 
-    return str;
+	return str;
 };
 
 /**
@@ -105,8 +110,8 @@ exports.toString = function(fn) {
  * @return {String}
  */
 exports.tpl = function(name, code, title) {
-    return '<span class="emoticon emoticon-' + name + '" title="' + title + '">' +
-        code + '</span>';
+	return '<span class="emoticon emoticon-' + name + '" title="' + title + '">' +
+		code + '</span>';
 };
 
 }(typeof jQuery != 'undefined' ? jQuery : null,
