@@ -228,11 +228,11 @@ PusherChatWidget._buildListItem = function(activity) {
   var message = $('<div class="activity-row">' +
                     '<div class="text">' + activity.body.replace(/\\('|&quot;)/g, '$1')+ '</div>' +
                   '</div>'); 
-  var Oldmessage = message.val();
-  var text = Oldmessage.find('.text');
-  var content = text.text();
-  content = content.emoticonize();
-  message.find('.text').text() = content;
+  // var Oldmessage = message.val();
+  // var text = Oldmessage.find('.text');
+  // var content = text.text();
+  // content = content.emoticonize();
+  // message.find('.text').text() = content;
   //console.log(sContent);
   content.append(message);
   //$('.text').emoticonize();
