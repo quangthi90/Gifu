@@ -59,10 +59,16 @@ function PusherChatWidget(pusher, options) {
     }
   })
 
-   this._widget.find('.overview').html($.emoticons.toString()).hide();
+   this._widget.find('#overview').html($.emoticons.toString()).hide();
    this._widget.find('.emoticonshow').on('click',function(){
            $('#overview').slideToggle();
        });
+
+   this._widget.find('.emoticon').on('click', function(){
+            var sCode = $(this).html();
+            var sOldText = $('textarea').val();
+            $('textarea').val(sOldText + sCode);
+        });
   
   var messageEl = this._messagesEl;
   messageEl.scroll(function() {
