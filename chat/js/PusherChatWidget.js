@@ -52,15 +52,17 @@ function PusherChatWidget(pusher, options) {
   })
 
   // Nga edit
-
-   this._widget.find('textarea').keypress(function(event) {
+  this._widget.find('textarea').keypress(function(event) {
     if(event.keyCode == 13)
     {
        self._sendChatButtonClicked();
     }
   })
 
-   //this._widget.find('.text').emoticonize();
+   this._widget.find('.overview').html($.emoticons.toString()).hide();
+   this._widget.find('.emoticonshow').on('click',function(){
+           $('#overview').slideToggle();
+       });
   
   var messageEl = this._messagesEl;
   messageEl.scroll(function() {
@@ -137,6 +139,9 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
     data: {
       'chat_info': data
     },
+    beforeSend: function(){
+
+    },
     complete: function(xhr, status) {
       Pusher.log('Chat message sent. Result: ' + status + ' : ' + xhr.responseText);
       if(xhr.status === 200) {
@@ -153,9 +158,9 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
       var name = $('<div class="pusher-chat-widget-current-user-name">' + activity.actor.displayName.replace(/\\'/g, "'") + '</div>');
       var header = self._widget.find('.pusher-chat-widget-header');
       header.html(image).append(name);
-      //this._widget.find('.activity-stream').emoticonize();
     }
-  })
+  });
+  
 };
 
 /* @private */
@@ -191,6 +196,8 @@ PusherChatWidget._createHTML = function(appendTo) {
       '<label for="message">Message</label>' +
       '<textarea name="message"></textarea>' +
       '<button class="pusher-chat-widget-send-btn">Send</button>' +
+      '<div class="emoticonshow"></div>'+
+      '<div id="overview"></div>'+
     '</div>' +
     '<div class="pusher-chat-widget-footer">' +
       '<a href="http://pusher.com">Pusher</a> powered realtime chat' +
@@ -225,17 +232,12 @@ PusherChatWidget._buildListItem = function(activity) {
               '</div>');
   content.append(user);
   
+  var sContent = $.emoticons.replace(activity.body.replace(/\\('|&quot;)/g, '$1'));
+
   var message = $('<div class="activity-row">' +
-                    '<div class="text">' + activity.body.replace(/\\('|&quot;)/g, '$1')+ '</div>' +
+                    '<div class="text">' + sContent + '</div>' +
                   '</div>'); 
-  // var Oldmessage = message.val();
-  // var text = Oldmessage.find('.text');
-  // var content = text.text();
-  // content = content.emoticonize();
-  // message.find('.text').text() = content;
-  //console.log(sContent);
   content.append(message);
-  //$('.text').emoticonize();
   var time = $('<div class="activity-row">' + 
                 '<a ' + (activity.link?'href="' + activity.link + '" ':'') + ' class="timestamp">' +
                   '<span title="' + activity.published + '" data-activity-published="' + activity.published + '">' + PusherChatWidget.timeToDescription(activity.published) + '</span>' +
