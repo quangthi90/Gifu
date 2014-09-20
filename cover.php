@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="url=cover.php" />
 <title>jQuery Drag'n'crop Plugin Examples</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link href="jquery.drag-n-crop.css" rel="stylesheet" type="text/css">
@@ -16,15 +15,20 @@
 </head>
 
 <body>
-<div style="width: 600px; height:200px;">
- <img src="images/1.jpg" id="demo3"/> </div>
+<div style="width: 600px; height:200px; overflow: hidden;">
+<?php
+	$file = $_FILES['user_cover'];
+	if(move_uploaded_file($file['tmp_name'], "upload/".$file['name']))
+		echo ("<img src='upload/".$file['name']."' id='demo3'/>");
+	else echo ("<img src='images/1.jpg' id='demo3'/>");
+?>
+ </div>
  <button id="btdrag">drag</button>
 <button id="btsave">save</button>
 
 <div id="position_img"></div>
-<form	action="cover.php"	method="post"	enctype="multipart/form-data">
-	Browse	file	
-	<input	type="file"	name="user_cover"	/>
+<form	action="cover.php"	method="post"	enctype="multipart/form-data">	
+	Browse	file	<input	type="file"	name="user_cover"	/>	
 	<input	type="submit"	value="Upload"/>	
 </form>	
 <script type="text/javascript">
@@ -34,8 +38,7 @@
 		$('#position_img').text ("Position offset: "+ a.offset);
 	})
 
-	$('#btdrag').click(function(){		
-		$('#demo3').draggable();
+	$('#btdrag').click(function(){
 		$('#demo3').draggable( "enable" );
 	})
 
@@ -48,3 +51,5 @@
 </div>
 </body>
 </html>
+
+ 
