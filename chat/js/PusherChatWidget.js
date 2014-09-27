@@ -11,6 +11,8 @@ function PusherChatWidget(pusher, options) {
   
   this._pusher = pusher;
   this._autoScroll = true;
+  this._currentMessageId = 0;
+  this._currentUser = "";
   
   options = options || {};
   this.settings = $.extend({
@@ -84,12 +86,14 @@ PusherChatWidget.instances = [];
 /* @private */
 PusherChatWidget.prototype._chatMessageReceived = function(data) {
   var self = this;
-  
   if(this._itemCount === 0) {
     this._messagesEl.html('');
   }
+  if(data.actor.displayName === self._currentUser){
+    return;
+  }
   
-  var messageEl = PusherChatWidget._buildListItem(data);
+  var messageEl = PusherChatWidget._buildListItem(data); 
   messageEl.hide();
   this._messagesEl.append(messageEl);
   messageEl.slideDown(function() {
@@ -106,7 +110,7 @@ PusherChatWidget.prototype._chatMessageReceived = function(data) {
     this._messagesEl.children(':first').slideUp(function() {
       $(this).remove();
     });
-  }
+  } 
 };
 
 /* @private */
@@ -131,8 +135,6 @@ PusherChatWidget.prototype._sendChatButtonClicked = function() {
   this._sendChatMessage(chatInfo);
 };
 
-
-
 /* @private */
 PusherChatWidget.prototype._sendChatMessage = function(data) {
   var self = this;
@@ -146,7 +148,9 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
       'chat_info': data
     },
     beforeSend: function(){
-
+        this._currentMessageId = (new Date()).getTime();
+        //Create html for new message
+        self._appendNewMessage(data);
     },
     complete: function(xhr, status) {
       Pusher.log('Chat message sent. Result: ' + status + ' : ' + xhr.responseText);
@@ -156,18 +160,69 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
       self._messageInputEl.removeAttr('readonly');
     },
     success: function(result) {
-      var activity = result.activity;
-      var imageInfo = activity.actor.image;
-      var image = $('<div class="pusher-chat-widget-current-user-image">' +
-                      '<img src="' + imageInfo.url + '" width="32" height="32" />' +
-                    '</div>');
-      var name = $('<div class="pusher-chat-widget-current-user-name">' + activity.actor.displayName.replace(/\\'/g, "'") + '</div>');
-      var header = self._widget.find('.pusher-chat-widget-header');
-      header.html(image).append(name);
+      if (result.isSuccess === true) {
+        self._currentUser = result.activity.actor.displayName;
+        var activity = result.activity;
+        var imageInfo = activity.actor.image;
+        var image = $('<div class="pusher-chat-widget-current-user-image">' +
+                        '<img src="' + imageInfo.url + '" width="32" height="32" />' +
+                      '</div>');
+        var name = $('<div class="pusher-chat-widget-current-user-name">' + activity.actor.displayName.replace(/\\'/g, "'") + '</div>');
+        var header = self._widget.find('.pusher-chat-widget-header');
+        header.html(image).append(name);
+      }
+      else{
+        this._handleError();
+      }
+    },
+    error: function(){
+      this._handleError();
     }
   });
   
 };
+
+PusherChatWidget.prototype._appendNewMessage = function(data) {
+  var newMessage = {
+    id: this._currentMessageId,
+    actor: {
+      objectType: 'person',
+      displayName: data.nickname,
+      image: {
+        url: 'http://www.gravatar.com/avatar/26311864926cfa00c0a8a465c2ff1f5f?s=80&amp;d=mm&amp;r=g' ,
+        //url: 'http://www.gravatar.com/avatar/' + MD5("data.email");
+        height: 48,
+        width: 48,
+      }
+    },
+    body: data.text,
+    published: new Date().toString(),    
+    type: "chat-message"
+  };
+  
+  var messageEl = PusherChatWidget._buildListItem(newMessage);
+  messageEl.hide();
+  this._messagesEl.append(messageEl);
+  messageEl.slideDown(function() {
+    if(self._autoScroll) {
+      var messageEl = self._messagesEl.get(0);
+      var scrollableHeight = (messageEl.scrollHeight - self._messagesEl.height());
+      self._messagesEl.scrollTop(messageEl.scrollHeight);
+    }
+  });
+  ++this._itemCount;
+  
+  if(this._itemCount > this.settings.maxItems) {
+    /* get first li of list */
+    this._messagesEl.children(':first').slideUp(function() {
+      $(this).remove();
+    });
+  }
+}
+
+PusherChatWidget.prototype._handleError = function(){
+  $("#" + _currentMessageId).remove();
+}
 
 /* @private */
 PusherChatWidget.prototype._startTimeMonitor = function() {
@@ -215,7 +270,7 @@ PusherChatWidget._createHTML = function(appendTo) {
 };
 
 /* @private */
-PusherChatWidget._buildListItem = function(activity) {
+PusherChatWidget._buildListItem = function(activity) {  
   var li = $('<li class="activity"></li>');
   li.attr('data-activity-id', activity.id);
   var item = $('<div class="stream-item-content"></div>');

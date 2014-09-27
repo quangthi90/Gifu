@@ -31,7 +31,7 @@ $response = $pusher->trigger($channel_name, 'chat_message', $data, null, true);
 header('Cache-Control: no-cache, must-revalidate');
 header('Content-type: application/json');
 
-$result = array('activity' => $data, 'pusherResponse' => $response);
+$result = array('activity' => $data, 'pusherResponse' => $response, 'isSuccess' => true);
 echo(json_encode($result));
 
 function get_channel_name($http_referer) {
