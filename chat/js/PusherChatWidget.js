@@ -13,6 +13,7 @@ function PusherChatWidget(pusher, options) {
   this._autoScroll = true;
   this._currentMessageId = 0;
   this._currentUser = "";
+  this._currentAvatar = "";
   
   options = options || {};
   this.settings = $.extend({
@@ -89,9 +90,11 @@ PusherChatWidget.prototype._chatMessageReceived = function(data) {
   if(this._itemCount === 0) {
     this._messagesEl.html('');
   }
+ 
   if(data.actor.displayName === self._currentUser){
     return;
-  }
+  }  
+  data.published =  new Date().toString();
   
   var messageEl = PusherChatWidget._buildListItem(data); 
   messageEl.hide();
@@ -104,6 +107,8 @@ PusherChatWidget.prototype._chatMessageReceived = function(data) {
     }
   });
   ++this._itemCount;
+    //Remove no message 
+  this._messagesEl.find("li.waiting").remove();
   
   if(this._itemCount > this.settings.maxItems) {
     /* get first li of list */
@@ -149,6 +154,10 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
     },
     beforeSend: function(){
         this._currentMessageId = (new Date()).getTime();
+		//Set current user
+		self._currentUser = data.nickname;
+		//remove text in textarea 
+		self._messageInputEl.val('');
         //Create html for new message
         self._appendNewMessage(data);
     },
@@ -160,10 +169,13 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
       self._messageInputEl.removeAttr('readonly');
     },
     success: function(result) {
-      if (result.isSuccess === true) {
-        self._currentUser = result.activity.actor.displayName;
+      if (result.isSuccess === true) {      
         var activity = result.activity;
         var imageInfo = activity.actor.image;
+		self._currentAvatar = imageInfo.url;
+		if($(".stream-item-content img.noAvatar").length > 0){
+			$(".stream-item-content img.noAvatar").attr("src", imageInfo.url).removeClass("noAvatar");
+		}
         var image = $('<div class="pusher-chat-widget-current-user-image">' +
                         '<img src="' + imageInfo.url + '" width="32" height="32" />' +
                       '</div>');
@@ -183,14 +195,15 @@ PusherChatWidget.prototype._sendChatMessage = function(data) {
 };
 
 PusherChatWidget.prototype._appendNewMessage = function(data) {
-  var newMessage = {
+	var self = this;
+	var newMessage = {
     id: this._currentMessageId,
+	hasAvatar: self._currentAvatar != "",
     actor: {
       objectType: 'person',
       displayName: data.nickname,
       image: {
-        url: 'http://www.gravatar.com/avatar/26311864926cfa00c0a8a465c2ff1f5f?s=80&amp;d=mm&amp;r=g' ,
-        //url: 'http://www.gravatar.com/avatar/' + MD5("data.email");
+        url: self._currentAvatar != "" ? self._currentAvatar : 'http://www.gravatar.com/avatar/26311864926cfa00c0a8a465c2ff1f5f?s=80&amp;d=mm&amp;r=g',
         height: 48,
         width: 48,
       }
@@ -211,7 +224,9 @@ PusherChatWidget.prototype._appendNewMessage = function(data) {
     }
   });
   ++this._itemCount;
-  
+  //Remove no message
+	this._messagesEl.find("li.waiting").remove();
+	
   if(this._itemCount > this.settings.maxItems) {
     /* get first li of list */
     this._messagesEl.children(':first').slideUp(function() {
@@ -244,9 +259,9 @@ PusherChatWidget._createHTML = function(appendTo) {
   '<div class="pusher-chat-widget">' +
     '<div class="pusher-chat-widget-header">' +
       '<label for="nickname">Name</label>' +
-      '<input type="text" name="nickname" value="Nga" />' +
+      '<input type="text" name="nickname" value="" />' +
       '<label for="email" title="So we can look up your Gravatar">Email (optional)</label>' +
-      '<input type="email" name="email" value="nguyennga1310@yahoo.com" />' +
+      '<input type="email" name="email" value="" />' +
     '</div>' +
     '<div class="pusher-chat-widget-messages">' +
       '<ul class="activity-stream">' +
@@ -271,6 +286,7 @@ PusherChatWidget._createHTML = function(appendTo) {
 
 /* @private */
 PusherChatWidget._buildListItem = function(activity) {  
+	var hasAvatar = activity.hasAvatar === undefined ? true: activity.hasAvatar;
   var li = $('<li class="activity"></li>');
   li.attr('data-activity-id', activity.id);
   var item = $('<div class="stream-item-content"></div>');
@@ -278,7 +294,7 @@ PusherChatWidget._buildListItem = function(activity) {
   
   var imageInfo = activity.actor.image;
   var image = $('<div class="image">' +
-                  '<img src="' + imageInfo.url + '" width="' + imageInfo.width + '" height="' + imageInfo.height + '" />' +
+                  '<img class="'+ (hasAvatar ? 'hasAvatar' : 'noAvatar')  + '" src="' + imageInfo.url + '" width="' + imageInfo.width + '" height="' + imageInfo.height + '" />' +
                 '</div>');
   item.append(image);
   
